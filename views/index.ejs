@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- remove /public from links as its already specified in path.join in script.js-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- prefr using tailwind over css pages in stylesheets -->
+    <div class="bg-slate-950 h-screen  w-screen">
+        <h1 class="text-slate-300 text-6xl m-8 mt-0 font-mono">Note Making</h1>
+        <div><form  class="p-4 flex flex-col justify-between " action="/create" method="post">
+            <input  class="w-full h-12 bg-slate-800 rounded-md mb-2 text-white outline-none"  classtype="text" placeholder="Enter title" name="title" id="">
+            <textarea class="bg-slate-800 mb-2 h-24 rounded-md text-white outline-none" placeholder="enter details" name="details" id=""></textarea>
+        <button class="bg-slate-800 w-36 rounded-md h-12 " type="submit" ><h1 class="text-white">Create task +</h1></button>
+        </form></div>
+        <div class="flex flex-start">
+<!-- !!IMPORTANT -->
+<% if(files.length>0) { %>
+    <% files.forEach(function(val){ %>
+<div class="h-48 m-5 w-64 bg-slate-800 flex flex-col justify-around rounded-md  ">
+    <h2 class="text-white text-center"><%= val %></h2>
+<div class="flex justify-around">
+    <!-- val title display krta hai here -->
+     <!-- making a link for the route -->
+     <a  class="text-slate-300 hover:underline"href="/files/<%=val %>">read more</a>
+     <a  class="text-slate-300 hover:underline"href="/edit/<%=val %>">edit</a>
+</div>
+    
+</div>
+<% }) %>
+<%} else { %>
+<p class="text-white">No tasks assigned</p>
+<% } %>
+        </div>
+         
+    </div>
+    <script src="/javascripts/index.js"></script>
+</body>
+</html>

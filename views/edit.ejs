@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg-slate-950 h-screen  w-screen">
+        <a class="text-white" href="/">GO BACK</a>
+        <div
+        ><form  class="p-4 flex flex-col justify-between " action="/edit" method="post">
+            <!-- value add krna prev title mein zruri so that changes can be seen everywhere -->
+            <input  class="w-full h-12 bg-slate-800 mb-2 outline-none"  classtype="text" placeholder="<%=fileName %>" value="<%=fileName %>" name="title" id="">
+            
+            <input  class="w-full h-12 bg-slate-800 mb-2 outline-none"  classtype="text" placeholder="Enter new name"  name="newtitle" id="">
+            
+        <button class="bg-slate-800 w-24 h-12 " type="submit" ><h1 class="text-white">update title</h1></button>
+        </form></div>
+    
+     
+</body>
+</html>
